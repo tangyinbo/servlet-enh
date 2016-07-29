@@ -1,0 +1,229 @@
+/* @bg-color:#A9A9A9; */
+ @bg-color:#F8F8F8; 
+@nav_conatiner-height:75px;
+@nav_container-margin-top:0px;
+@container_margin-top:@nav_conatiner-height+@nav_container-margin-top;
+//***************************线性背景颜色
+.compability-linear-gradient(@fromcolor,@toColor){
+  background-image: -moz-linear-gradient(top, @fromcolor, @toColor);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@fromcolor), to(@toColor));
+  background-image: -webkit-linear-gradient(top, @fromcolor, @toColor);
+  background-image: -o-linear-gradient(top, @fromcolor, @toColor);
+  background-image: linear-gradient(to bottom, @fromcolor, @toColor);
+}
+.compability-border-radius(@size){
+	 -webkit-border-radius: @size;
+     -moz-border-radius: @size;
+          border-radius: @size;
+}
+.compability-border-radius(@top,@right,@bottom,@left){
+	 -webkit-border-radius: @arguments;
+     -moz-border-radius: @arguments;
+          border-radius: @arguments;
+}
+//******************************导航条
+#nav-container{
+	#menuSearch{
+		position: relative;
+		z-index: 10;
+		background-color: red;
+		height: 100%;
+		width: @container_left-width;
+	}
+	height:@nav_conatiner-height;
+	position: absolute;
+	top: @nav_container-margin-top;
+	width:100%;
+	z-index: 10;
+	.navbar{
+		padding-bottom: 0;
+		margin-bottom: 0;
+		border-radius: 0;
+	}
+	.navbar-default{
+		background-color: transparent;
+	}
+	.compability-linear-gradient(#696969,@bg-color);
+	.navbar-inner{
+		background-color: transparent;
+		background-image: none;
+		.compability-border-radius(4px,4px,0,0);
+		border: none;
+	}
+	.navbar .nav > li > a {
+  			text-shadow:none;
+  			color:white;
+  			&:hover{
+  				color:red;
+  			}
+	}
+	//tab控制
+	#nav-tabs-conainer{
+		#siderBarCtl{
+			position: absolute;
+			z-index: 1;
+			background-color: red;
+			height: 100%;
+			width:@container_left-width;
+			left:0;
+		}
+		overflow: hidden;
+		position: relative;
+		height:22px;
+		padding-left: @container_left-width;
+	}
+	.nav-tabs{
+		display: inline-block;
+		&>li{
+			&.active{
+			}
+			background-color: #FFA500;
+			position:relative;
+			.nav-tabs-close{
+				position: absolute;
+				top:0px;
+				right:0px;
+				width:20px;
+				height:20px;
+				text-align: center;
+				cursor: pointer;
+				&:hover{
+					  background: rgba(70, 80, 90, 0.3);
+				}
+				color:#D2691E;
+			}
+			border:1px solid white;
+			border-bottom: none;
+			.compability-border-radius(4px,4px,0,0);
+			margin-top: 0;
+			margin-right: 3px;
+			a{
+				color:blue;
+			}
+		}
+	}
+	
+	margin-bottom: 0;
+	
+}
+body{
+	background-color:@bg-color ;
+}
+//*********************************************主布局容器
+#container{
+	margin-top:@container_margin-top;
+	position: relative;
+
+}
+//*******************************************左边栏
+@container_left-width:250px;
+#container_left{
+	width:@container_left-width;
+	.li{heigth:50px;background: red;margin-top: 2px;}
+	min-height: 600px;
+	border:1px solid white;
+	.compability-border-radius(4px);
+}
+
+/*************************slider----*/
+@dept-widht:10px;
+.accordion{
+	.accordion-heading .accordion-toggle {
+	  padding: 3px 15px;
+	}	
+ 	.accordion-group{
+	   border:none;
+	} 
+}
+.accordion .accordion-inner{
+	border:none;
+	.accordion-group-inner{
+		border:none;
+	}
+	.accordion-heading .accordion-toggle {
+		margin:0;padding:0;
+	}
+	padding: 3px 15px;
+	
+}
+
+.accordion{
+	border:none;
+}
+
+//*****************************nav_tabs*******
+.nav-tabs{
+	&> li > a{
+		  padding-top: 0px;
+  		  padding-bottom: 0px;
+	}
+}
+a.nav-parent{
+		text-decoration: none;
+}
+a.nav-parent1{
+		text-decoration: none;
+}
+a.nav-parent2{
+		text-decoration: none;
+}
+.nav-parent{
+	&::before{
+		content: '+';  
+	    display: inline-block;
+	}
+
+}
+.nav-parent1{
+	&::before{
+		content: '+';  
+	    display: inline-block;
+	    padding-left: @dept-widht;
+	}
+}
+.nav-parent2{
+	&::before{
+		content: '+';  
+	    display: inline-block;
+	    padding-left: @dept-widht*2;
+	}
+}
+
+.nav-dept1{
+	&::before{
+		content: ' ';
+	    display: inline-block;
+	   padding-left: @dept-widht;
+	}
+
+}
+.nav-dept2{
+	&::before{
+		content: ' ';
+	    display: inline-block;
+	    padding-left: @dept-widht*2;
+	}
+}
+.nav-dept3{
+	&::before{
+		content: ' ';
+	    display: inline-block;
+	    padding-left: @dept-widht*3;
+	}
+}
+
+//****************************************右边主显示
+#container_right{
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	left:@container_left-width;
+	margin-left: 5px;
+	min-height: 600px;
+	.compability-border-radius(4px);
+	border:1px solid white;
+}
+//TABs--------------
+#container_right .nav-tabs{
+	
+}

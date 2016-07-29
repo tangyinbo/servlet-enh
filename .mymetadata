@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="servlet-enh"
+  id="myeclipse.1467426906438"
+  context-root="/servlet-enh"
+  j2ee-spec="6.0"
+  archive="servlet-enh.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

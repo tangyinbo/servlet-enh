@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap\css\bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css\main.css">
+
+  <style type="text/css" rel="stylesheet">
+    .scroller {
+                white-space: pre-line;
+                height: 720px;
+                width: 480px;
+                overflow-y: hidden;
+                position: relative;
+            }
+  </style>
+</head>
+<body ng-controller="RootController">
+  <div id="nav-container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">{{name}}</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      <!--nav_tabs-->
+      <div id="nav-tabs-conainer">
+           <!--siderbarMenuSearch-->
+           <div id="siderBarCtl"></div>
+           <ul class="nav nav-tabs" >
+            <li  ng-repeat="tab in pageContextHandler.navTabs.tabs"
+                    tab_render_listener ng-click="tab_active('tab_'+tab.type+'_'+tab.nodeId,$index,$event)">
+              <a id="tab_{{tab.type+'_'+tab.nodeId}}"
+               href="#tabContent_{{tab.type+'_'+tab.nodeId}}"
+               data-toggle="tab"
+               aria-controls="tabContent_{{tab.type+'_'+tab.nodeId}}"
+               role="tab" 
+               >{{tab.text}}</a>
+              <div class="nav-tabs-close"  ng-click="remove_tab('tab_'+tab.type+'_'+tab.nodeId,$index,$event)">
+                <i class="glyphicon glyphicon-remove"></i>
+              </div>
+            </li>
+         </ul> 
+      </div>
+     
+  </div>
+  <div id="container">
+    <!--start container_left-->
+    <div id="container_left">
+        <div id="siderBar_tree"></div>
+    </div>
+    <!--end container_left-->
+    <div id="container_right">
+      <div id="tab-content" class="tab-content" style="  background-color:white;width:100%;min-height:600px;">
+			
+      </div>
+    </div>
+  <div>
+  <script type="text/javascript" src="angular/jquery.js"></script>
+  <script type="text/javascript" src="bootstrap\js\bootstrap.js"></script>
+  <script type="text/javascript" src="angular/angular.min.js"></script>
+  <script type="text/javascript" src="anaular-app/app.js"></script>
+  <script type="text/javascript" src="angular/bootstrap-treeview.js"></script>
+  <script type="text/javascript">
+  $(function(){
+      //--自适应宽度
+      function adapt_width(){
+            var body_width = $(document.body).width();
+            $("#container_right").css("width",body_width-250-7);
+      }
+      adapt_width();
+      $(window).resize(function(){
+           adapt_width();
+      });
+  });
+
+  </script>
+</body>
+</html>
