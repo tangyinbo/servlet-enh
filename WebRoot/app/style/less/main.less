@@ -1,0 +1,135 @@
+@theme1-bg-color:#f7f7f7;
+@container_left_width:220px;//容器左边宽度
+@nav_height:50px;//导航条高度
+@nav_tab_container_height:22px;//nav_tab_container 高度
+@nav_tab_container_height_pt:2px;//nav_tab_container padding-top 高度
+@theme1-widget-color:orange;//255 165 0
+.theme-bg1{
+	 //background-color: @theme1-bg-color;
+}
+.box-shadow-default{  
+   -webkit-box-shadow:0 0 10px rgba(162, 205, 90, .5);  
+  -moz-box-shadow:0 0 10px rgba(162, 205, 90, .5);  
+  box-shadow:0 0 10px rgba(162, 205, 90, .5);  
+}
+.border-radius(up,right,bottom,left){
+	  -webkit-transition:@arguments;
+       -o-transition:@arguments;
+          transition:@arguments;
+}
+
+
+/*********************************************************************************************/
+
+//-start ---header-------------------------------
+#header{
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  height: @nav_height+@nav_tab_container_height+@nav_tab_container_height_pt;
+  .navbar{
+  	margin-bottom: 0;
+  	border-radius:0;
+  }
+  #nav_tab_container{
+  	height:@nav_tab_container_height+@nav_tab_container_height_pt;
+  	padding-top: @nav_tab_container_height_pt;
+  	background: rgba(0, 0, 0, 0.2);
+
+  	.nav_tab_container_left{
+		//background-color: red;
+		width:@container_left_width;
+		float:left;
+		.search-siderbar-menu{
+			background-color: white;
+			border-radius: 50px;
+			display:inline-block;
+			background-color: red;
+ 			&>input{
+				height:@nav_tab_container_height+@nav_tab_container_height_pt - 2;		
+			} 
+		}
+  	}
+
+  	.nav_tab_container_right{
+		//background-color: red;
+		float:left;
+		.nav-tabs{
+			border:none;
+		}
+		.nav-tabs > li{
+			position: relative;
+			&>div{
+				position: absolute;
+				width:15px;
+				height:15px;
+				background-color: red;
+				top:2px;
+				right:5px;
+				line-height: 15px;
+				border-radius: 15px;
+				background:rgba(255, 165, 0,0.5);
+				&:hover{
+					color:red;
+					cursor:pointer;
+				}
+			}
+		}
+		.nav-tabs > li > a {
+			padding:0 20px;
+			//background-color: orange;
+
+		}
+  	}
+  }
+}
+.nav-tabs > li > a{
+	background:rgba(119, 136, 153,0.5);
+	:hover{
+				background-color: red;
+			}
+}
+
+//-end ---header-------------------------------
+/*********************************************************************************************/
+//-start ---container-------------------------------
+#container{
+	padding-top:@nav_height+@nav_tab_container_height+@nav_tab_container_height_pt;
+	min-height: 800px;
+
+}
+/********start left********/
+#container_left{
+	background-color:@theme1-bg-color;
+	top:@nav_height+@nav_tab_container_height+2+@nav_tab_container_height_pt;
+	//bottom: 0;
+	min-height: 500px;
+	position: fixed;
+	width: @container_left_width;
+	.box-shadow-default;
+	z-index: 1030;
+}
+/********end left********/
+/********start right********/
+#container_right{
+	padding-left: @container_left_width+2;
+	height:100%;
+
+	//background-color:@theme1-bg-color;
+}
+/********end right********/
+//-end ---container-------------------------------
+/*********************************************************************************************/
+//-start ---footer-------------------------------
+
+//-end ---footer-------------------------------
+/*********************************************************************************************/
+.footer {
+    border-top: 20px solid white;
+    z-index: 100;
+    padding-top: 2em;
+    background-color: #333;
+    color: white;
+    padding-bottom: 2em;
+}

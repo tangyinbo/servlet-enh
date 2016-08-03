@@ -1,0 +1,102 @@
+.box-shadow-default {
+  -webkit-box-shadow: 0 0 10px rgba(162, 205, 90, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(162, 205, 90, 0.5);
+  box-shadow: 0 0 10px rgba(162, 205, 90, 0.5);
+}
+/*********************************************************************************************/
+#header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  height: 74px;
+}
+#header .navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+#header #nav_tab_container {
+  height: 24px;
+  padding-top: 2px;
+  background: rgba(0, 0, 0, 0.2);
+}
+#header #nav_tab_container .nav_tab_container_left {
+  width: 220px;
+  float: left;
+}
+#header #nav_tab_container .nav_tab_container_left .search-siderbar-menu {
+  background-color: white;
+  border-radius: 50px;
+  display: inline-block;
+  background-color: red;
+}
+#header #nav_tab_container .nav_tab_container_left .search-siderbar-menu > input {
+  height: 22px;
+}
+#header #nav_tab_container .nav_tab_container_right {
+  float: left;
+}
+#header #nav_tab_container .nav_tab_container_right .nav-tabs {
+  border: none;
+}
+#header #nav_tab_container .nav_tab_container_right .nav-tabs > li {
+  position: relative;
+}
+#header #nav_tab_container .nav_tab_container_right .nav-tabs > li > div {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  top: 2px;
+  right: 5px;
+  line-height: 15px;
+  border-radius: 15px;
+  background: rgba(255, 165, 0, 0.5);
+}
+#header #nav_tab_container .nav_tab_container_right .nav-tabs > li > div:hover {
+  color: red;
+  cursor: pointer;
+}
+#header #nav_tab_container .nav_tab_container_right .nav-tabs > li > a {
+  padding: 0 20px;
+}
+.nav-tabs > li > a {
+  background: rgba(119, 136, 153, 0.5);
+}
+.nav-tabs > li > a :hover {
+  background-color: red;
+}
+/*********************************************************************************************/
+#container {
+  padding-top: 74px;
+  min-height: 800px;
+}
+/********start left********/
+#container_left {
+  background-color: #f7f7f7;
+  top: 76px;
+  min-height: 500px;
+  position: fixed;
+  width: 220px;
+  -webkit-box-shadow: 0 0 10px rgba(162, 205, 90, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(162, 205, 90, 0.5);
+  box-shadow: 0 0 10px rgba(162, 205, 90, 0.5);
+  z-index: 1030;
+}
+/********end left********/
+/********start right********/
+#container_right {
+  padding-left: 222px;
+  height: 100%;
+}
+/********end right********/
+/*********************************************************************************************/
+/*********************************************************************************************/
+.footer {
+  border-top: 20px solid white;
+  z-index: 100;
+  padding-top: 2em;
+  background-color: #333;
+  color: white;
+  padding-bottom: 2em;
+}

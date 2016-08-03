@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main-app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="plugins\bootstrap\css\bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style\css\main.css">
+	<style type="text/css">
+			ul{
+
+			}
+		.tli{
+			 height:200px; 
+		}
+		.tli:nth-child(even){
+			background-color: pink;
+		}
+	</style>
+</head>
+<body ng-controller="mainController">
+	<!--start nav-->
+	<div id="header">
+		<nav class="navbar navbar-inverse">
+		  <div class="container">
+		    <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+		      <div class="navbar-header">
+		      <a class="navbar-brand" href="#">
+		        <i style='color:orange' class="glyphicon glyphicon-asterisk"></i>
+		      </a>
+		    </div>
+		  </div>
+		</nav>	
+		<!-- start nav_tab_container-->
+        <div id="nav_tab_container">
+        	<div class="nav_tab_container_left">
+				<i style="color:orange;cursor:pointer;" ng-click="hideSiderBar($event)"
+				   class="glyphicon glyphicon-chevron-left"></i>
+				<div class="search-siderbar-menu">
+					<input type='text' ng-model="siderBarFilter" class='form-control' placeholder='search menu'/> 
+				</div>
+        	</div>
+        	 <!-- Nav tabs -->
+			 <div class="nav_tab_container_right">
+				 <!-- Nav tabs       -->
+				  <ul class="nav nav-tabs" role="tablist">
+				    <li role="presentation" ng-class="{active :isCurrentActiveTab(tab)}" 
+				     		id="{{geneRateTabIdByNode(tab)}}"
+				            ng-repeat="tab in navTabs.tabs"
+				            ng-click='active_tab(tab,$index,$event)'
+				            class="repeat-animation">
+				    	<a href="#{{geneRateTabContentIdByNode(tab)}}" 
+				    	   aria-controls="{{geneRateTabContentIdByNode(tab)}}" 
+				    	   role="tab" 
+				    	   data-toggle="tab">{{tab.text}}</a>
+				    	<div class="nav-tabs-close"  ng-click="remove_tab(tab,$index,$event)">
+			                <i class="glyphicon glyphicon-remove"></i>
+			            </div>
+				    </li>
+				  </ul>
+        	</div>
+        </div>
+        <!-- end nav_tab_container-->
+	</div>
+
+	<!--end nav-->
+
+	<!--start container-->
+	<div id="container">
+		<!--start container_left-->
+		<div id="container_left">
+			 <div class="siderBarTree" navtabs='navTabs' siderbarfilter ='siderBarFilter' genetabid="geneRateTabIdByNode"></div>
+			<!-- <div id="siderBar_tree"></div> -->
+
+		</div>
+		<!--end container_left-->
+
+		<!--start container_right-->
+		<div id="container_right">
+			 <!-- Tab panes -->
+			<div class="tab-content" 
+			     tabContent navtabs='navTabs'
+			     genetabcontentid="geneRateTabContentIdByNode"
+			     genetabid="geneRateTabIdByNode">
+			  <!--   <div role="tabpanel" class="tab-pane" id="profile">profile</div>
+			  <div role="tabpanel" class="tab-pane" id="messages">messages</div>
+			  <div role="tabpanel" class="tab-pane" id="settings">settings</div> -->
+			  </div>
+			</div>
+		<!--end container_right-->
+	</div>
+	<!--end container-->
+	<!-- <footer class="footer">This document was written in 2010</footer> -->
+</body>
+<script type="text/javascript" src="plugins\jquery.js"></script>
+<script type="text/javascript" src="plugins\bootstrap\js\bootstrap.js"></script>
+<script type="text/javascript" src="plugins\angular.min.js"></script>
+<script type="text/javascript" src="plugins\angular-animate.js"></script>
+
+<script type="text/javascript" src="plugins\bootstrap-treeview.js"></script>
+<script type="text/javascript" src="scripts\ng-app\main-app.js"></script>
+<script type="text/javascript" src="scripts\ng-app\main-service.js"></script>
+<script type="text/javascript" src="scripts\ng-app\main-directive.js"></script>
+</html>
