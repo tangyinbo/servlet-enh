@@ -1,0 +1,25 @@
+<div class="main-business-container"ng-controller="userController">
+    <!-- start  main-business-form-btns-->
+    <div class="main-business-form-btns">
+        <button type="button" class="btn btn-default btn-sm" ng-click="queryData()">
+            <i class="glyphicon glyphicon-search"></i>query
+        </button>
+        <button type="button" class="btn btn-default btn-sm">
+            <i class="glyphicon glyphicon-remove"></i>delete
+        </button>
+    </div>
+    <!-- end  main-business-form-btns-->
+    <div class="mainQueruForm" form-data-provier = 'formDataProvier'></div>
+    <!-- start  main-business-data-grid-pane-->
+    <div class="main-business-data-grid-pane">
+        <div class="cw-pane">
+            详细信息
+        </div>
+       <!--数据网格-->
+        <table class="table table-bordered queryDataGrid" grid-data= "gridData" grid-columns-msg-provider = "gridColumnsMsgProvider">
+
+        </table>
+    </div>
+    <!-- end  main-business-data-grid-pane-->
+
+</div>

@@ -1,0 +1,30 @@
+<!-- start  main-business-form-pane-->
+<div class="main-business-form-pane">
+    <!-- start  main-business-form-->
+    <div class="main-business-form">
+        <form class="form-inline">
+            <!--start form input line -->
+            <div class="form-inline-div container-fluid" ng-repeat="inputLine in formLayoutData">
+                <!--start input group-->
+                <div class="form-group col-xs-3"  ng-repeat="inputItem in inputLine">
+                    <div class="row input-label-group">
+                        <div class="col-xs-4 input-label">
+                            <label for="exampleInputName2">{{inputItem.lablelTest}}:</label>
+                        </div>
+                        <div class="col-xs-8 input-widget">
+                            <input type="text"
+                                   name="{{inputItem.field}}"
+                                   class="form-control"
+                                   id="exampleInputName2"
+                                   placeholder="{{inputItem.placeholder}}">
+                        </div>
+                    </div>
+                </div>
+                <!--end input group-->
+            </div>
+            <!--end form input line -->
+        </form>
+    </div>
+    <!-- end  main-business-form-->
+</div>
+<!-- end  main-business-form-pane-->

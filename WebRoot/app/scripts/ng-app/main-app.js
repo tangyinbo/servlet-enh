@@ -1,7 +1,10 @@
 /*
 mainApp
 */
-var mainApp = angular.module('main-app',['cb.main.service','cb.main.directive','ngAnimate']);
+var mainApp = angular.module('main-app',['cb.main.service'
+                                             ,'cb.main.directive'
+                                             ,'ngAnimate'
+                                             ,'com.cb.User']);
 
 //主Controller
 mainApp.controller('mainController',function($scope,$rootScope,$animateCss,mainService,CW_CONSTANT){

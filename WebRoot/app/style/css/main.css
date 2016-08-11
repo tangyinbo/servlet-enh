@@ -1,8 +1,4 @@
-.box-shadow-default {
-  -webkit-box-shadow: 0 0 10px rgba(162, 205, 90, 0.5);
-  -moz-box-shadow: 0 0 10px rgba(162, 205, 90, 0.5);
-  box-shadow: 0 0 10px rgba(162, 205, 90, 0.5);
-}
+@charset "utf-8";
 /*********************************************************************************************/
 #header {
   position: fixed;

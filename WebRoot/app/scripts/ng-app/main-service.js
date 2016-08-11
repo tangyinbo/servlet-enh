@@ -96,7 +96,7 @@ function siderBatData(){
             tags: ['0'],
              type:'menu',
             leaf:true,
-            url:'test2.html'
+            url:'test4.html'
           },
           {
             nodeId:8,

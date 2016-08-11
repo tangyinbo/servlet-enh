@@ -1,0 +1,62 @@
+@charset "utf-8";
+/**业务界面容器********************************/
+.main-business-container {
+  /* background-color: pink; */
+  min-height: 800px;
+  padding: 5px 10px;
+}
+/**form 容器********************************************/
+.main-business-form-btns {
+  background-color: #f7f7f7;
+  height: 31px;
+  /* border-bottom: 1px solid #337AB7; */
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: 0 2px 3px rgba(162, 205, 90, 0.5);
+  -moz-box-shadow: 0 2px 3px rgba(162, 205, 90, 0.5);
+  box-shadow: 0 2px 3px rgba(162, 205, 90, 0.5);
+}
+.main-business-form-btns > button {
+  display: inline-block;
+  margin-left: 5px;
+  float: right;
+}
+.main-business-form-btns > button:before,
+.main-business-form-btns > button:after {
+  clear: both;
+}
+.main-business-form-pane {
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.main-business-form-pane .main-business-form {
+  padding: 5px;
+}
+.main-business-form-pane .main-business-form .form-inline-div {
+  margin-bottom: 5px;
+}
+.main-business-form-pane .main-business-form .form-inline-div .input-label-group {
+  vertical-align: middle;
+}
+.main-business-form-pane .main-business-form .form-inline-div .input-label {
+  height: 34px;
+  line-height: 34px;
+  text-align: right;
+  padding: 0;
+}
+.cw-pane {
+  height: 31px;
+  /* border-bottom: 1px solid #337AB7; */
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: 0 2px 3px rgba(162, 205, 90, 0.5);
+  -moz-box-shadow: 0 2px 3px rgba(162, 205, 90, 0.5);
+  box-shadow: 0 2px 3px rgba(162, 205, 90, 0.5);
+  line-height: 31px;
+  padding: 0 5px;
+}
+/**数据展示容器****************************************************/
+.main-business-data-grid-pane {
+  background-color: #f7f7f7;
+  min-height: 600px;
+  border-radius: 5px;
+}

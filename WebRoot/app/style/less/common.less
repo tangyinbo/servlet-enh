@@ -1,0 +1,21 @@
+@charset "utf-8";  
+@theme1-bg-color:#f7f7f7;
+//@theme1-bg-color:#428bca
+@container_left_width:220px;//容器左边宽度
+@nav_height:50px;//导航条高度
+@nav_tab_container_height:22px;//nav_tab_container 高度
+@nav_tab_container_height_pt:2px;//nav_tab_container padding-top 高度
+@theme1-widget-color:orange;//255 165 0
+.theme-bg1{
+	 //background-color: @theme1-bg-color;
+}
+.box-shadow-default(@x:0,@y:0,@weight:10px){  
+   -webkit-box-shadow:@x @y @weight rgba(162, 205, 90, .5);  
+  -moz-box-shadow:@x @y @weight rgba(162, 205, 90, .5);  
+  box-shadow:@x @y @weight rgba(162, 205, 90, .5);  
+}
+.border-radius(up,right,bottom,left){
+	  -webkit-transition:@arguments;
+       -o-transition:@arguments;
+          transition:@arguments;
+}
